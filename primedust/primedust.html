@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primedust</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+<style>
+     body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 20px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    p {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    a {
+        display: none; /* Hide the link initially */
+        text-decoration: none;
+        color: #007bff;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <h1>Random Gamer Name Generator</h1>
+    <button onclick="generateName()">Generate Gamer Name</button>
+    <a id="backToCosmicio" href="C:\Projects\Cosmicio\index.html" target="_blank">Back to Cosmicio</a>
+    <p id="generatedName"></p>
+</div>
+
+<script>
+    // JavaScript code remains the same
+    var adjectives = [
+        "Savage", "Fierce", "Deadly", "Swift", "Mystic", "Epic", "Legendary", "Ninja", "Shadow", "Inferno", 
+        "Ruthless", "Cosmic", "Venomous", "Celestial", "Atomic", "Ironclad", "Sovereign", "Vicious", "Thunderous", "Mythic", 
+        "Eternal", "Radiant", "Ferocious", "Titanic", "Relentless", "Arcane", "Blazing", "Phantom", "Exalted", "Sinister", 
+        "Ember", "Stormy", "Astral", "Frostbite", "Shadowy", "Fiery", "Crimson", "Lunar", "Darkened", "Shadowed", 
+        "Molten", "Chaos", "Frozen", "Divine", "Celestial", "Vortex", "Thundering", "Cosmic", "Ecliptic", "Infernal", 
+        "Arcane", "Radiant", "Toxic", "Venomous", "Mysterious", "Draconic", "Lunar", "Solar", "Astral", "Infernal", 
+        "Celestial", "Spectral", "Vengeful", "Mystic", "Arcane", "Eternal", "Elemental", "Shadowed", "Ethereal", "Vortex", 
+        "Haunted", "Sinister", "Malevolent", "Enchanted", "Enigmatic", "Eldritch", "Mythical", "Frozen", "Blazing", "Volcanic", 
+        "Tenebrous", "Luminous", "Cursed", "Radiant", "Abyssal", "Elysian", "Demonic", "Astral", "Arcane", "Nocturnal", 
+        "Celestial", "Infernal", "Chaotic", "Seraphic", "Abyssal", "Ethereal", "Phantasmal", "Arcane", "Shadowy", "Abyssal"
+    ];
+
+    var nouns = [
+        "Warrior", "Knight", "Assassin", "Champion", "Sniper", "Dragon", "Wizard", "Samurai", "Phoenix", "Gladiator", 
+        "Hunter", "Ninja", "Barbarian", "Warlock", "Rogue", "Archer", "Berserker", "Titan", "Sorcerer", "Paladin", 
+        "Mystic", "Ranger", "Avenger", "Reaper", "Mercenary", "Corsair", "Sentinel", "Marauder", "Valkyrie", "Gunslinger", 
+        "Templar", "Scribe", "Warden", "Outlaw", "Juggernaut", "Warlord", "Phantom", "Enchanter", "Duelist", "Guardian", 
+        "Exorcist", "Elementalist", "Summoner", "Alchemist", "Zealot", "Trickster", "Conqueror", "Mystic", "Arcanist", 
+        "Marksman", "Crusader", "Inquisitor", "Gladiator", "Saboteur", "Battlemage", "Revenant", "Herald", "Paragon", 
+        "Blademaster", "Thaumaturge", "Spellslinger", "Warlock", "Sentinel", "Barbarian", "Outrider", "Swashbuckler", 
+        "Skirmisher", "Warden", "Ronin", "Ravager", "Warpriest", "Marauder", "Arcanist", "Shadow", "Magus", "Sorcerer", 
+        "Dragonborn", "Executioner", "Druid", "Guardian", "Shinobi", "Paladin", "Seer", "Bladestorm", "Thane", "Spellblade", 
+        "Runekeeper", "Sellsword", "Acolyte", "Thunderer", "Reaver", "Avenger", "Sentinel", "Vanguard", "Arcane", "Archon", 
+        "Herald", "Blade Dancer", "Pathfinder", "Warpriest"
+    ];
+
+    function generateName() {
+        var randomAdjIndex = Math.floor(Math.random() * adjectives.length);
+        var randomNounIndex = Math.floor(Math.random() * nouns.length);
+        var randomAdj = adjectives[randomAdjIndex];
+        var randomNoun = nouns[randomNounIndex];
+        var gamerName = randomAdj + " " + randomNoun;
+        document.getElementById("generatedName").textContent = gamerName;
+        document.getElementById("backToCosmicio").style.display = "inline";
+    }
+</script>
+</body>
+</html>
