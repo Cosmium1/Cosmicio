@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2da6cf;
+    font-family: Arial, sans-serif;
+}
+
+#cosmicio {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#main {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#main h1 {
+    font-size: 36px;
+    color: white;
+}
+
+#main p {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#primedust-link {
+    background-color: white;
+    color: blue;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#primedust-link:hover {
+    background-color: lightgray;
+    color: blue;
+}
