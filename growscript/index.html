@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growscript</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            background-color: #353535;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            
+            // Set canvas size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Parameters
+            let radius = 1;
+            let theta = 0;
+            const thetaIncrement = 0.1;
+            let startX = canvas.width / 2;
+            let startY = canvas.height / 2;
+            const maxRadius = Math.max(canvas.width, canvas.height) / 2;
+            const growthRate = 0.5;
+            
+            // Main loop
+            function draw(x, y) {
+                startX = x;
+                startY = y;
+                
+                function drawSpiral() {
+                    // Update the spiral parameters
+                    const x = startX + radius * Math.cos(theta);
+                    const y = startY + radius * Math.sin(theta);
+                    theta += thetaIncrement;
+                    
+                    // Generate rainbow color
+                    const hue = (theta * 10) % 360; // Dynamic hue based on theta
+                    const saturation = 100; // Full saturation
+                    const lightness = 50; // Medium lightness
+                    const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+                    
+                    // Draw the spiral
+                    ctx.beginPath();
+                    ctx.arc(x, y, 1, 0, Math.PI * 2);
+                    ctx.fillStyle = color;
+                    ctx.fill();
+                    
+                    // Increase radius until maxRadius is reached
+                    if (radius < maxRadius) {
+                        radius += growthRate;
+                    }
+                    
+                    // Repeat until maxRadius is reached
+                    if (radius < maxRadius) {
+                        requestAnimationFrame(drawSpiral);
+                    }
+                }
+                
+                drawSpiral();
+            }
+            
+            // Event listener for mouse click
+            canvas.addEventListener("mousedown", function(event) {
+                radius = 1; // Reset radius on each click
+                theta = 0; // Reset theta on each click
+                draw(event.clientX, event.clientY);
+            });
+        });
+    </script>
+</body>
+</html>
