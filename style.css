@@ -46,6 +46,21 @@ body {
     color: blue;
 }
 
+#growscript-link {
+    background-color: red;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#growscript-link:hover {
+    background-color: orange;
+    color: black;
+}
+
 #shadowBox {
   background-color: rgb(0, 0, 0);
   /* Fallback color */
