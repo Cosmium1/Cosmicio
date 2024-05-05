@@ -31,9 +31,9 @@ body {
     margin-bottom: 20px;
 }
 
-#primedust-link {
-    background-color: white;
-    color: blue;
+#redorange-link {
+    background-color: rgb(210, 0, 0);
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 18px;
@@ -41,21 +41,9 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-#primedust-link:hover {
-    background-color: lightgray;
-    color: blue;
-}
-
-#growscript-link {
-    background-color: red;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    /* add any other styling you want for the button */
-}
-
-#growscript-link:hover {
-    background-color: orange;
+#redorange-link:hover {
+    background-color: rgb(255, 179, 0);
+    color: rgb(17, 17, 17);
 }
 
 #shadowBox {
