@@ -49,16 +49,13 @@ body {
 #growscript-link {
     background-color: red;
     color: black;
+    border: none;
     padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 18px;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
+    /* add any other styling you want for the button */
 }
 
 #growscript-link:hover {
     background-color: orange;
-    color: black;
 }
 
 #shadowBox {
